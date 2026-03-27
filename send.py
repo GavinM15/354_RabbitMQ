@@ -7,7 +7,7 @@ channel.queue_declare(queue='Post Office', durable=True, arguments={'x-queue-typ
 
 channel.basic_publish(exchange='',
                       routing_key='hello',
-                      body='Mail')
-print(" [x] Sent 'You got mail'")
+                      body= 'Mail')
+print(" [gavin] Sent 'You got mail'")
 
 connection.close()
