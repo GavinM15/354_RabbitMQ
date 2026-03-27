@@ -7,7 +7,7 @@ def main():
     channel.queue_declare(queue='Post Office', durable=True, arguments={'x-queue-type': 'quorum'})
 
     def callback(ch, method, properties, body):
-        print(f" [x] Received {body}")
+        print(f" [x] Received {body.decode()}")
 
     channel.basic_consume(queue='Post Office', on_message_callback=callback, auto_ack=True)
 
